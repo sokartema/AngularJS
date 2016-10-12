@@ -1,0 +1,22 @@
+{
+  "name": "AngularJS",
+  "authors": [
+    "Jazer Abreu <sokartema@gmail.com>"
+  ],
+  "description": "Examples of AngularJS",
+  "main": "",
+  "keywords": [
+    "AngularJS",
+    "Examples",
+    "Tutorial"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
