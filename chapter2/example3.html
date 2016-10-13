@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Example2</title>
+    <title>Example3</title>
 </head>
 
-<body ng-controller="mainCtrl">
-    Hello {{1 + 1}}nd time AngularJS
+<body ng-controller="mainCtrl as ctrl">
+    {{ctrl.helloMsg}} AngularJS
+    <br>
+    {{ctrl.goodbyeMsg}} AngularJS
     <script src="../bower_components/angular/angular.min.js">
     </script>
 
     <script type="text/javascript">
         angular.module('notesApp', [])
             .controller('mainCtrl', [function() {
-                alert('mainCtrl loaded!');
+                this.helloMsg = "Hello ";
+                this.goodbyeMsg = "Goodbye ";
             }]);
     </script>
 </body>
