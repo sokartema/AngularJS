@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="notesApp">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Example6</title>
+        <style>
+            .done {
+                background-color: green;
+            }
+            .pending {
+                background-color: red;
+            }
+
+        </style>
+    </head>
+
+    <body ng-controller="mainCtrl as ctrl">
+        <div ng-repeat="note in ctrl.notes" ng-class="ctrl.getNoteClass(note.done)">
+            <span>
+                {{note.label}}</span>
+            <span ng-show="note.assignee" ng-bind="note.assignee"></span>
+        </div>
+        <script src="../bower_components/angular/angular.min.js"></script>
+
+        <script type="text/javascript">
+            angular.module('notesApp', []).controller('mainCtrl', [function() {
+                    var self = this; //recommended
+                    self.notes = [
+                        {
+                            label: 'First Note',
+                            done: false,
+                            assignee: 'Shyam'
+                        }, {
+                            label: 'Second Note',
+                            done: false
+                        }, {
+                            label: 'Done Note',
+                            done: true
+                        }, {
+                            label: 'Last Note',
+                            done: false,
+                            assignee: 'Brad'
+                        }
+                    ];
+
+                    self.getNoteClass = function(status) {
+                        return {
+                            done: status,
+                            pending: !status
+                        };
+                    };
+                }
+            ]);
+        </script>
+    </body>
+
+</html>
