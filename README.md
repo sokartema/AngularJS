@@ -4,5 +4,4 @@
 
 - npm install
 - bower install
-
-Open each example.
+- Open each example.
